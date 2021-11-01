@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SliderColor: View {
     @Binding var value: Double
-    @FocusState var isInputActive: Bool
+    
     
     var body: some View {
         HStack {
@@ -21,17 +21,8 @@ struct SliderColor: View {
                 .keyboardType(.numberPad)
                 .frame(width: 50.0)
                 .textFieldStyle(.roundedBorder)
-                .focused($isInputActive)
         }
-        .toolbar {
-            ToolbarItemGroup(placement: .keyboard) {
-                Spacer()
-                
-                Button("Done") {
-                    isInputActive = false
-                }
-            }
-        }
+        
     }
 }
 
